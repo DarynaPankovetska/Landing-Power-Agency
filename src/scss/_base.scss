@@ -1,4 +1,4 @@
-@use './helpers/abstracts' as *;
+@use './helpers/variables';
 
 html {
 	// font-size: calc(100dvw / 1920 * 10);
@@ -14,7 +14,7 @@ body {
 }
 
 body {
-	font-family: $font_1;
+	font-family: variables.$font_1;
 }
 
 .wrapper {
@@ -36,10 +36,10 @@ body {
 }
 
 .container {
-	// max-width: 126rem;
+	max-width: 144.4rem;
 	width: 100%;
-	max-width: 1380px;
-	padding: 0 30px;
+	padding: 0 2rem;
+	margin: 0 auto;
 }
 
 .swiper {

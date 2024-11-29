@@ -1,4 +1,4 @@
-@use './helpers/variables';
+@use './helpers/abstracts' as *;
 
 html {
 	// font-size: calc(100dvw / 1920 * 10);
@@ -33,6 +33,7 @@ body {
 
 .section {
 	width: 100%;
+	padding: 10rem 0;
 }
 
 .container {

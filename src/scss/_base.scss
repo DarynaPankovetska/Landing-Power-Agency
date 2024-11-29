@@ -9,9 +9,13 @@ html {
 html,
 body {
 	height: 100%;
-	// font-family: $font_1;
 	font-weight: 400;
 	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font_1;
+	color: $color_text;
 }
 
 .wrapper {
@@ -30,49 +34,31 @@ body {
 
 .section {
 	width: 100%;
+	padding: 10rem 0;
+
+	&.section--bg {
+		background-color: $color_bg_2;
+	}
+}
+
+.section__title {
+	font-size: 4rem;
+	font-weight: 800;
+	line-height: 1.5;
+	color: $color_title;
+
+	&.section__title--center {
+		text-align: center;
+	}
 }
 
 .container {
-	// max-width: 126rem;
+	max-width: 144.4rem;
 	width: 100%;
-	max-width: 1380px;
-	padding: 0 30px;
+	padding: 0 2rem;
+	margin: 0 auto;
 }
 
-/* remove */
-body {
-	font-family: cursive;
-}
-
-header,
-footer {
-	height: 38px;
-	padding: 30px 0;
-	background-color: white;
-	margin-bottom: 124px;
-
-	// @include bp($point_2, min) {
-	// 	background-color: tomato;
-	// }
-}
-
-.hello {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	height: calc(100vh - 240px);
-	color: brown;
-	font-size: 5rem;
-
-	text-align: center;
-	// p {
-	// 	color: $color_black;
-	// }
-}
-
-/* remove */
 .swiper {
 	width: 600px;
 	height: 300px;

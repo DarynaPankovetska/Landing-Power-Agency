@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper_1', {
 	slidesPerView: 1,
 	spaceBetween: 10,
 	loop: true,

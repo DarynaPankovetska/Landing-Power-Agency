@@ -33,11 +33,39 @@ body {
 }
 
 .section {
+	position: relative;
 	width: 100%;
 	padding: 10rem 0;
 
 	&.section--bg {
 		background-color: $color_bg_2;
+	}
+
+	&.section_decor {
+		&::after ,
+		&::before {
+			position: absolute;
+			top: -2rem;
+	
+			content: "";
+	
+			width: 10rem;
+			height: 7rem;
+	
+			background-image: url(../imgs/comments_decor.svg);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	
+		&::after {
+			left: 10rem;
+			top: 7rem
+		}
+		&::before {
+			top: 48rem;
+			right: 10rem;
+		}
 	}
 }
 

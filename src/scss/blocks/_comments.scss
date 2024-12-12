@@ -1,10 +1,43 @@
 @use './helpers/abstracts' as *;
 
 .comments {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 7rem;
+    position: relative;
+    display: block;
+
+    max-width: 67rem;
+    width: 100%;
+    margin: 0 auto;
+
+    &::after ,
+    &::before {
+        position: absolute;
+        top: -5rem;
+
+        content: "";
+
+        width: 5.6rem;
+        height: 10rem;
+
+        background-image: url(../imgs/quote.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &::after {
+        left: -6rem;
+    }
+    &::before {
+        right: -6rem;
+        rotate: 180deg;
+    }
+}
+
+.comments.content {
+    overflow: hidden;
+    &:not(:last-child) {
+        margin-bottom: 8rem;
+    }
 }
 
 .comments_title {
@@ -13,14 +46,14 @@
 
 .comments__item {
     display: block;
-    max-width: 67rem;
-    width: 100%;
+    max-width: 100%;
+    height: 50rem;
 }
 
-.comments__item_text {
+.comments__items_text {
     font-size: 1.6rem;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 3.5;
     text-align: center;
     color: $color_text_2;
 }
@@ -29,13 +62,65 @@
     display: flex;
 }
 
+.comments_nav__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-content: center;
+    align-items: center;
+    height: 21rem;
+    width: 18rem;
+
+    cursor: pointer;
+    .swiper-slide.swiper-slide-thumb-active & {
+        min-width: 18rem;
+    }
+}
+
 .comments_nav__img_w {
     border-radius: 50%;
     overflow: hidden;
-    height: 8.6rem;
-    width: 8.6rem;
+    transition: all $transition_dur ease-in-out;
+    flex-shrink: 0;
+
+    .swiper-slide.swiper-slide-thumb-active & {
+        height: 9.6rem;
+        width: 9.6rem;
+        border: .5rem solid $color_white;
+        box-shadow: 0 0 0 .5rem $color_accent;    
+    }
+    .swiper-slide:not(.swiper-slide-thumb-active) & {
+        height: 7.8rem;
+        width: 7.8rem; 
+    }
 }
 
 .comments_nav__img {
     @extend %cover_img
+}
+
+.comments_nav__data {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    line-break: 1.5;
+    text-align: center;
+    .swiper-slide:not(.swiper-slide-thumb-active) & {
+        display: none;
+    }
+}
+
+.comments_nav__name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $color_title;
+    white-space: nowrap;
+}
+
+
+.comments_nav__pos {
+    color: $color_text;
+    font-size: 2rem;
+    font-weight: 500;
+    white-space: nowrap;
 }

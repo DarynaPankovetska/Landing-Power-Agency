@@ -276,44 +276,39 @@ height: 48px;
 border: 1px solid #706FE5;
 border-radius: 40px;
 }
-.hero_img__girl{
-	display: flex;
-	justify-content: center;
-	flex-shrink: 0;
 
-	.hero_girl__circle{
-	height: 40rem;
-	width: 40rem;
-	border: 1rem solid #706fe5;
-	border-radius: 50%;
-	background-color: rgba(112, 111, 229, 0.15);
+
+.hero__picture {
+	position: relative;
+	z-index: 1;
+	min-width: 51.7rem;
+	max-width: 51.7rem;
+	width: 51.7rem;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		
+		z-index: -1;
+		width: 39.7rem;
+		height: 39.7rem;
+		border-radius: 50%;
+		border: 1rem solid $color_accent;
+		background: rgba(112, 111, 229, 0.15);
+		transform: translateX(-50%);
+	}
+	&__reviews {
+		position: absolute;
+	}
+
+	&__circle {
+		position: absolute;
 	}
 }
-.hero__picture_img{
-	position: absolute;
-	bottom: 5rem;
-	height: 46rem;
-	width: 46rem;
-}
-.circle{
-	border-radius: 50%;
-}
+
 .circle.circle--almaz{
-	width: 4.7rem;
-	height: 4.7rem;
-	left: -4px;
-	background-color: grey;
 
-	.circle.circle--almaz_2 {
-	width: 4.7rem;
-	height: 4.7rem;
-	background-color: #333333;
-	}
-
-}
-.circle.circle--purple{
-	width: 83px;
-height: 83px;
-angle: 90 deg;
-background-color: #706FE5;
 }

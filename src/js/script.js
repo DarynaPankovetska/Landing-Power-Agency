@@ -12,4 +12,7 @@ const swiperOne = new Swiper('.swiper_1', {
 
 const swiperThree = new Swiper('.swiper_3', {
 	slidesPerView: 5,
+	autoplay: {
+		delay: 3000,
+	},
 });

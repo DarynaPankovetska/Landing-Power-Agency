@@ -23,10 +23,10 @@
 				  </a></div>
 				<div class="nav">
 				  <nav class="nav__list">
-					<li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">About us</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">Products</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Partners</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Our Products</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Reviews</a></li>
+					<li class="nav__item"><a href="#" class="nav__link">Subscribe</a></li>
 				  </nav>
 				</div>
 			  </div>
@@ -52,26 +52,36 @@
 						</button>
 					  </div>
 					</div>
-					<div class="hero__picture">
-					  <img  src="./imgs/Mask group.svg" alt=""  class="hero__picture_img"/>
-					  <img src="./imgs/employees_img.svg" alt=""  class="hero__employee_img"/>
-					  <div class="circle circle--almaz"></div>
-					  <div class="circle circle--xd"></div>
-					  <div class="circle circle--figma"></div>
-					  <div class="circle circle--purple"></div>
+					<div class="hero__pictures">
+					  <div class="circle circle--almaz circle--almaz_2">
+						<img src="./imgs/almaz.svg" alt="">
+					  </div>
+					  <div class="circle circle--xd">
+						<img src="./imgs/Xd.svg" alt="">
+					  </div>
+					  <div class="circle circle--figma">
+						<img src="./imgs/figma-icon.svg" alt="">
+					  </div>
+						<div class="hero__pic-right">
+							<div class="hero_img__girl">
+							<div class="hero_girl__circle"></div>
+							<img src="./imgs/Mask group.svg" alt=""  class="hero__picture_img"/>
+							</div>
+					  		<img src="./imgs/employees_img.svg" alt=""  class="hero__employee_img"/>
+						</div>
+					  
 					</div>
 				  </div>
 				</div>
 			  </section>
+
+			  @@include('./html/blocks/companies.html')
 
 			  @@include('./html/blocks/comments.html')
 
 			  @@include('./html/blocks/help.html')
 
 
-			  <footer class="footer">
-				<div class="footer__in container"></div>
-			</footer>
 	
 					<section class="section">
 						<div class="container">
@@ -91,6 +101,8 @@
 							</div>
 						</div>
 					</section>
+
+				@@include('./html/footer.html')
 	
 			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 			<script src="./js/script.min.js"></script>

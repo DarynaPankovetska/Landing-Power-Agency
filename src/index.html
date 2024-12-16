@@ -9,90 +9,29 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="./css/style.css" />
 
 		
 	</head>
 	<body>
 		<div class="wrapper">
-			<header class="header">
-			  <div class="container header__in">
-				<div class="header_logo"><a href="#" class="header_img_logo">
-					<img src="./imgs/group2182_logo.svg" alt="#" class="header__logo_img" />
-				  </a></div>
-				<div class="nav">
-				  <nav class="nav__list">
-					<li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">About us</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">Services</a></li>
-					<li class="nav__item"><a href="#" class="nav__link">Products</a></li>
-				  </nav>
-				</div>
-			  </div>
-			</header>
+			@@include('./html/header.html')
 			<main class="main">
-			  <section class="section section--digital">
-				<div class="container main__in">
-				  <div class="hero">
-					<div class="hero__info">
-					  <div class="hero__title">
-						<h2>We Design Impactful <br/>Digital</h2> 
-						<img src="./imgs/products_logo.svg" class="products_logo" alt="products"></img>
-					  </div>
-					  <div class="hero__descr">
-						Help find solutions with intitutive and in accordance with client business goals. 
-						We provide a high-quality services.
-					  </div>
-					  <div class="hero__footer">
-						<button class="btn_base btn--purple">Contact us</button>
-						<button class="btn_base btn--white">
-							<div class="round_btn"><img src="./imgs/round_btn_purple.svg" class="small_round_btn"></img></div>
-							<div class="white_btn_text">Watch our introduction video</div>
-						</button>
-					  </div>
-					</div>
-					<div class="hero__picture">
-					  <img  src="./imgs/Mask group.svg" alt=""  class="hero__picture_img"/>
-					  <img src="./imgs/employees_img.svg" alt=""  class="hero__employee_img"/>
-					  <div class="circle circle--almaz"></div>
-					  <div class="circle circle--xd"></div>
-					  <div class="circle circle--figma"></div>
-					  <div class="circle circle--purple"></div>
-					</div>
-				  </div>
-				</div>
-			  </section>
+			@@include('./html/blocks/hero.html')
 
-			  @@include('./html/blocks/comments.html')
+			@@include('./html/blocks/companies.html')
 
-			  @@include('./html/blocks/help.html')
+			@@include('./html/blocks/comments.html')
 
+			@@include('./html/blocks/help.html')
 
-			  <footer class="footer">
-				<div class="footer__in container"></div>
-			</footer>
-	
-					<section class="section">
-						<div class="container">
-							<div class="hello">
-								<h1>Landing Power Agency</h1>
-							</div>
-							<div class="swiper">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide"><img src="./imgs/1.png" class="img" alt=""></div>
-									<div class="swiper-slide"><img src="./imgs/1.png" class="img" alt=""></div>
-									...
-								</div>
-								<div class="swiper-pagination"></div>
-								<div class="swiper-button-prev"></div>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-scrollbar"></div>
-							</div>
-						</div>
-					</section>
-	
-			<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-			<script src="./js/script.js"></script>
+			@@include('./html/footer.html')
+			</main>
+		<div>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="./js/script.min.js"></script>
 	</body>
 </html>
 

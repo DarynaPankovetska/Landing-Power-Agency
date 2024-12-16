@@ -1,0 +1,32 @@
+@use './helpers/abstracts' as *;
+
+.section__swip--companies {
+    background-color: $color_bg_2;
+}
+
+.companies {
+    &__title {
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 2.4rem;
+        letter-spacing: 0.20000000298023224px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #1E1F4B;
+        text-transform: capitalize;
+        margin-bottom: 4.7rem;
+    }
+    &__items {
+        overflow: hidden;
+
+        &-slider {
+            align-items: center;
+        }
+    }
+    &__item {
+        display: flex;
+        justify-content: center;
+    }
+}
+

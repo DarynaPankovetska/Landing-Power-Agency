@@ -1,18 +1,19 @@
-const body = document.querySelector('body');
-const swiper = new Swiper('.swiper', {
-	slidesPerView: 1,
-	spaceBetween: 10,
-	loop: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	},
-	scrollbar: {
-		el: '.swiper-scrollbar',
+
+
+const swiperTwo = new Swiper('.swiper_2', {
+	slidesPerView: 5,
+});
+
+const swiperOne = new Swiper('.swiper_1', {
+	initialSlide: 2,
+	thumbs: {
+		swiper: swiperTwo,
 	},
 });
 
+const swiperThree = new Swiper('.swiper_3', {
+	slidesPerView: 5,
+	autoplay: {
+		delay: 3000,
+	},
+});

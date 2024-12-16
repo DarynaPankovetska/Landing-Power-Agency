@@ -5,6 +5,7 @@ const swiperTwo = new Swiper('.swiper_2', {
 });
 
 const swiperOne = new Swiper('.swiper_1', {
+	initialSlide: 2,
 	thumbs: {
 		swiper: swiperTwo,
 	},

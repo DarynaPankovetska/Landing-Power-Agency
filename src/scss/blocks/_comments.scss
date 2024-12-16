@@ -90,6 +90,7 @@
         box-shadow: 0 0 0 .5rem $color_accent;    
     }
     .swiper-slide:not(.swiper-slide-thumb-active) & {
+        filter: blur(0.5px);
         height: 7.8rem;
         width: 7.8rem; 
     }

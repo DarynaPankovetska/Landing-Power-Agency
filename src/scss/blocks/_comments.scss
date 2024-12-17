@@ -80,14 +80,14 @@
 .comments_nav__img_w {
     border-radius: 50%;
     overflow: hidden;
-    transition: all $transition_dur ease-in-out;
+    transition: all 0.3s ease-in-out;
     flex-shrink: 0;
 
     .swiper-slide.swiper-slide-thumb-active & {
         height: 9.6rem;
         width: 9.6rem;
         border: .5rem solid $color_white;
-        box-shadow: 0 0 0 .5rem $color_accent;    
+        box-shadow: 0 0 0 .5rem rgba(112, 111, 229, 1);    
     }
     .swiper-slide:not(.swiper-slide-thumb-active) & {
         filter: blur(0.5px);

@@ -14,7 +14,7 @@ body {
 }
 
 body {
-	font-family: $font_1;
+	font-family: "Poppins", sans-serif;
 	color: $color_text;
 }
 
@@ -39,7 +39,7 @@ body {
 	padding: 10rem 0;
 
 	&.section--bg {
-		background-color: $color_bg_2;
+		background-color: rgba(112, 111, 229, 0.02);
 	}
 
 	&.section_decor {
@@ -159,5 +159,5 @@ body {
 }
 
 .nav__link:hover {
-	color: $color_accent;
+	color: rgba(112, 111, 229, 1);
 }

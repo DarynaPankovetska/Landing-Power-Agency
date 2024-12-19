@@ -161,3 +161,28 @@ body {
 .nav__link:hover {
 	color: rgba(112, 111, 229, 1);
 }
+
+.top_button {
+	left: 100%;
+	bottom: 0;
+	position: sticky;
+
+	translate: -2rem -2rem;
+	width: 5rem;
+	height: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: #706FE5;
+	cursor: pointer;
+}
+
+.top_button__svg {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	object-fit: contain;
+	object-position: center;
+	color: $color_white;
+}

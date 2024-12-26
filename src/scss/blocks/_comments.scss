@@ -7,8 +7,9 @@
     max-width: 67rem;
     width: 100%;
     margin: 0 auto;
+    padding-bottom: 0.5rem;
 
-    &::after ,
+    &::after,
     &::before {
         position: absolute;
         top: -5rem;
@@ -18,10 +19,14 @@
         width: 5.6rem;
         height: 10rem;
 
-        background-image: url(../imgs/quote.svg);
+        background-image: url('../imgs/quote.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+  
+        @include bp($point_4) {
+            display: none;
+        }  
     }
 
     &::after {
@@ -37,17 +42,61 @@
     overflow: hidden;
     &:not(:last-child) {
         margin-bottom: 8rem;
+
+        @include bp($point_4) {
+            margin-bottom: 6rem;
+        }
+        
+        @include bp($point_6) {
+            margin-bottom: 4rem;
+        
+        }
+
+        
+        @include bp($point_7) {
+            margin-bottom: 3rem;
+        
+        }
+        
+        
     }
 }
 
 .comments_title {
     margin-bottom: 11rem;
+
+    
+    @include bp($point_2) {
+        font-size: 3.8rem;
+    }
+
+    
+    @include bp($point_4) {
+        font-size: 3.2rem;
+        margin-bottom: 5rem;
+    }
+
+
+    
+    @include bp($point_6) {
+        font-size: 2.6rem;
+        margin-bottom: 4rem;
+    }
+    
+    @include bp($point_7) {
+        font-size: 2.3rem;
+        margin-bottom: 3rem;
+    
+    }
+    
+    
+    
 }
 
-.comments__item {
+.comments__items {
     display: block;
     max-width: 100%;
-    height: 50rem;
+    height: auto;
 }
 
 .comments__items_text {
@@ -56,6 +105,30 @@
     line-height: 3.5;
     text-align: center;
     color: $color_text_2;
+
+    
+    @include bp($point_2) {
+    font-size: 1.5rem;
+    line-height: 3.2;
+    }
+    
+
+    @include bp($point_4) {
+        font-size: 1.4rem;
+        line-height: 3;
+    }
+
+    @include bp($point_6) {
+        font-size: 1.2rem;
+        line-height: 2.5;
+    }
+    
+    @include bp($point_7) {
+        font-size: 1.1rem;
+        line-height: 2.2;
+    
+    }
+    
 }
 
 .comments_nav {
@@ -68,36 +141,55 @@
     row-gap: 1rem;
     align-content: center;
     align-items: center;
-    height: 21rem;
     width: 18rem;
 
     cursor: pointer;
     .swiper-slide.swiper-slide-thumb-active & {
         min-width: 18rem;
     }
+
+                
+    @include bp($point_6) {
+        gap: 1.5rem;
+    }
+        
+
 }
 
 .comments_nav__img_w {
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     flex-shrink: 0;
 
+    &::after {
+        content: '';
+        display: block;
+
+        padding-bottom: 100%;
+    }
+
     .swiper-slide.swiper-slide-thumb-active & {
-        height: 9.6rem;
-        width: 9.6rem;
+        height: auto;
+        max-width: 9.6rem;
+        width: 100%;
         border: .5rem solid $color_white;
         box-shadow: 0 0 0 .5rem rgba(112, 111, 229, 1);    
     }
     .swiper-slide:not(.swiper-slide-thumb-active) & {
         filter: blur(0.5px);
-        height: 7.8rem;
-        width: 7.8rem; 
+        height: auto;
+        max-width: 7.8rem;
+        width: 100%; 
     }
 }
 
 .comments_nav__img {
-    @extend %cover_img
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %cover_img;
 }
 
 .comments_nav__data {
@@ -116,6 +208,22 @@
     font-weight: 700;
     color: $color_title;
     white-space: nowrap;
+
+    
+    @include bp($point_4) {
+        font-size: 2.1rem;
+    }
+
+    
+    @include bp($point_6) {
+        font-size: 1.5rem;
+    } 
+    
+    @include bp($point_7) {
+        font-size: 1.2rem;
+    
+    }
+    
 }
 
 
@@ -124,4 +232,20 @@
     font-size: 2rem;
     font-weight: 500;
     white-space: nowrap;
+
+    @include bp($point_4) {
+        font-size: 1.7rem;
+    }
+
+    
+    @include bp($point_6) {
+        font-size: 1.3rem;
+    }
+    
+    @include bp($point_7) {
+        font-size: 1rem;
+    
+    }
+    
+    
 }

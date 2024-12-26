@@ -1,9 +1,23 @@
 @use './helpers/abstracts' as *;
 
 html {
+	
 	// font-size: calc(100dvw / 1920 * 10);
-
-	font-size: 10px;
+	
+	@include bp($point_1, min) {
+		font-size: 10px;	
+	}
+	
+	@media (min-width: $point_2) and (max-width: $point_1) {
+		font-size: calc(100dvw / 1920 * 14);
+	}
+	
+	
+	@include bp($point_3) {
+		font-size: 10px;
+	}
+	
+	
 }
 
 html,
@@ -14,32 +28,106 @@ body {
 }
 
 body {
-	font-family: $font_1;
+	font-family: "Poppins", sans-serif;
 	color: $color_text;
+}
+
+.menu__button {
+	display: none;
+
+	@include bp($point_2) {
+		display: block;
+		width: 3rem;
+		height: 2.2rem;
+		position: relative;
+		transform: rotate(0deg);
+		border: 0;
+		background: rgba(0,0,0,0);
+		box-shadow: none;
+		cursor: pointer;
+		transition: .5s ease-in-out;
+	}
+
+	&.active {
+		span {
+			&:nth-child(1) {
+				transform: translate(0, 10px) rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				width: 0;
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				top: 1.9rem;
+  				transform: translate(0, -9px) rotate(-45deg);
+			}
+		}
+	}
+
+	span {
+		display: block;
+		width: 100%;
+		height: 0.25rem;
+		position: absolute;
+		left: 0;
+		transform: rotate(0deg);
+		border-radius: 0.2rem;
+		background: $color_black;
+		opacity: 1;
+		transition: .25s ease-in-out;
+
+		&:nth-child(1) {
+			top: 0;
+		}
+
+		&:nth-child(2) {
+			top: 0.9rem;
+		}
+
+		&:nth-child(3) {
+			top: 1.8rem;
+		}
+	}
 }
 
 .wrapper {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	min-height: 100%;
 	justify-content: center;
 	align-items: center;
-	min-height: 100%;
-	overflow: hidden;
+
+	@include bp($point_2) {
+		padding-top: 0;
+	}
+	
+	
 }
 
 .main {
 	flex-grow: 1;
 	width: 100%;
+
 }
 
 .section {
 	position: relative;
 	width: 100%;
-	padding: 10rem 0;
+	
+
+	&.section-ov_hidden {
+		overflow: hidden;
+	}
+
+	&.section--digital {
+		padding-top: 0;
+	}
 
 	&.section--bg {
-		background-color: $color_bg_2;
+		background-color: rgba(112, 111, 229, 0.02);
 	}
 
 	&.section_decor {
@@ -57,6 +145,12 @@ body {
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: contain;
+
+			
+			@include bp($point_2) {
+			display: none;
+			}
+			
 		}
 	
 		&::after {
@@ -68,11 +162,22 @@ body {
 			right: 10rem;
 		}
 
+
 	.container {
 		display: flex;
 		flex-direction: column;
 	}
 	}
+
+	
+	@include bp($point_2, min) {
+		padding: 10rem 0;
+	}
+
+	@include bp($point_3) {
+		padding: 3.5rem 0;
+	}
+	
 
 }
 
@@ -96,6 +201,15 @@ body {
 	margin: 0 auto;
 }
 
+.header {
+	display: block;
+	width: 100%;
+  	position: sticky;
+  	top: 0;
+  	background-color: rgba(255, 255, 255, 0.7);
+  	z-index: 99;
+	padding: 1.8rem 0;
+}
 
 .swiper {
 	width: 600px;
@@ -108,18 +222,18 @@ body {
   }
 
   .header__in{
-	width: 1170px;
+	max-width: 1170px;
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	column-gap: 266px;
+	column-gap: 2rem;
   }
 
   .header_logo{
 	width: 94px;
 	height: 38px;
-	padding-top: 1.5rem;
   }
 
   .header_img_logo{
@@ -134,6 +248,32 @@ body {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	
+
+	@include bp($point_3) {
+		display: none;
+	}
+
+	
+	@include bp($point_2) {
+	
+	}
+	
+  }
+
+  .nav.active {
+	@include bp($point_2) {
+		transform: translateX(0);
+		opacity: 1;
+		pointer-events: auto;
+        display: flex;
+        position: absolute;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        top: 8.8rem;
+		background-color: rgba(255, 255, 255, 0.7);
+	}
   }
 
   .nav__list{
@@ -146,12 +286,15 @@ body {
 	font-weight: 400;
 	line-height: 2.8rem;
 	text-align: left;
-
-
-	padding-top: 3rem;
 	text-decoration: none;
-
-  }
+	
+	
+	@include bp($point_2) {
+		flex-direction: column;
+		gap: 1rem;
+	}
+		
+}
 
 .nav__link {
 	color: #1E1F4B;
@@ -159,5 +302,32 @@ body {
 }
 
 .nav__link:hover {
-	color: $color_accent;
+	color: rgba(112, 111, 229, 1);
+}
+
+.top_button {
+	left: 100%;
+	bottom: 0;
+	position: sticky;
+
+	translate: -2rem -2rem;
+	width: 5rem;
+	height: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	background-color: #706FE5;
+	cursor: pointer;
+	
+	
+}
+
+.top_button__svg {
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	object-fit: contain;
+	object-position: center;
+	color: $color_white;
 }

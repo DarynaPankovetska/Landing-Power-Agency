@@ -1,69 +1,130 @@
 @use './helpers/abstracts' as *;
 
-.container_help {
-    margin: 12rem 15rem 14rem 15rem;
+
+.help__inner {
     display: flex;
+    text-align: center;
+    gap: 9.4rem;
+
+    
+    @include bp($point_2, min) {
+        flex-direction: row;
+    }
+
+    
+    @include bp($point_3) {
+        flex-direction: column;
+    }
+    
+    
 }
 
 .help_left {
-    align-items: left;
+    align-items: flex-start;
     width: 50rem;
-    height: 7rem;
+    height: auto;
+
+    
+    @include bp($point_3) {
+        width: 100%;
+    }
+    
 }
 
 .help_title {
     padding-top: 3.6rem;
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 700;
     line-height: 5.2rem;
     text-align: left;
     color: $color_title;
     text-transform: capitalize;
+
+    @include bp($point_2) {
+        font-size: 3.5rem;
+    }
+    @include bp($point_4) {
+        font-size: 3.2rem;
+    }
+    @include bp($point_6) {
+        font-size: 3rem;
+        padding-top: 1rem;
+    }
+    @include bp($point_7) {
+        font-size: 2.4rem;
+        padding-top: 0;
+    }
 }
 
 .help_descr {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 3.6rem;
     text-align: left;
     padding-top: 2.2rem;
     padding-bottom: 5rem;
     color: rgba(#1B1D21, 75%);
-}
 
-.help_enter-email {
-    padding-bottom: 8.3rem;
+    
+    @include bp($point_1) {
+        font-size: 1.8rem;
+    }
+    
+    @include bp($point_3) {
+        padding-top: 0.8rem;
+        padding-bottom: 2.4rem;
+    }
+    @include bp($point_4) {
+        font-size: 1.6rem;
+    }
+    @include bp($point_6) {
+        font-size: 1.4rem;
+    }
+    @include bp($point_7) {
+        font-size: 1.2rem;
+        line-height: 2.8rem;
+    }
+    
 }
 
 .form {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 49.1rem;
-    height: 7.2rem;
-    padding: 0 2rem;
+    max-width: 49.1rem;
+    width: 100%;
+    padding: 1.3rem 2rem;
     border-radius: 1.2rem;
     background-color: rgba(112, 111, 229, 0.15);
+    gap: 1rem;
+
+    @include bp($point_6) {
+        flex-wrap: wrap;
+    }
+
 }
 
 .input_email {
-    width: 20rem;
     font-size: 1.6rem;
     font-weight: 400;
     color: #2E3E5C;
     background-color: transparent;
     border: none;
+
+    @include bp($point_6) {
+        width: calc(100% - 34px);
+    }
+    
 }
 
-.input_icon{ 
+.input_icon { 
     display: block;
     width: 2.4rem;
     height: 2.4rem;
 }
 
 .btn_subscribe {
-    width: 17.2rem;
-    height: 4.7rem;
+    min-width: 17.2rem;
     padding: 1rem 4rem;
     gap: 1rem;
     border-radius: 1.2rem;
@@ -77,6 +138,13 @@
     text-align: center;
     color: rgba(255, 255, 255, 1);
     transition: all 0.3s ease-in-out;
+
+    @include bp($point_6) {
+        min-width: 14rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    
 }
 
 .btn_subscribe:hover {
@@ -85,21 +153,16 @@
 }
 
 .help_right {
-    width: calc(50% - 1.5rem);
-}
-
-.item {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-left: 9.4rem;
     row-gap: 6rem;
     column-gap: 3rem;
 }
 
 .item_in {
-    width: 26.2rem;
-    height: 15.8rem;
+    width: calc(50% - 1.5rem);
+    height: auto;
 }
 
 .item_title {
@@ -108,6 +171,18 @@
     line-height: 2.8;
     text-align: left;
     color: $color_title;
+
+    
+    @include bp($point_4) {
+        font-size: 1.8rem;
+    }
+    
+    @include bp($point_6) {
+        font-size: 1.6rem;
+    }
+    @include bp($point_7) {
+        font-size: 1.4rem;
+    }
 }
 
 .item_descr {
@@ -116,6 +191,17 @@
     line-height: 2.8rem;
     text-align: left;
     color: $color_text_3;
+
+    @include bp($point_4) {
+        font-size: 1.3rem;
+    }
+    @include bp($point_6) {
+        font-size: 1.1rem;
+    }
+    @include bp($point_7) {
+        font-size: 1rem;
+        line-height: 2.1rem;
+    }
 }
 
 .item_block_img {

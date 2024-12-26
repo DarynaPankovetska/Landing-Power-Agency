@@ -19,6 +19,24 @@
     text-align: left;
     text-transform: capitalize;
     color: #1E1F4B;
+
+    @include bp($point_2) {
+        font-size: 3.8rem;
+    }
+    
+    @include bp($point_4) {
+        font-size: 3.2rem;
+    }
+    
+    @include bp($point_6) {
+        font-size: 2.7rem;
+        line-height: 4.3rem;
+    }
+    
+    @include bp($point_7) {
+        font-size: 2.3rem;
+        line-height: 3.6rem;
+    }
 }
 
 .prod_main__descr {
@@ -26,10 +44,26 @@
     font-weight: 400;
     line-height: 3.6rem;
     text-align: left;
-
     color: $color_text_3;
-
     padding-top: 14px;
+
+    @include bp($point_2) {
+        font-size: 1.8rem;
+    }
+    
+    @include bp($point_4) {
+        font-size: 1.6rem;
+    }
+    
+    @include bp($point_6) {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+    }
+    
+    @include bp($point_7) {
+        font-size: 1.2rem;
+        line-height: 2.4rem;
+    }
 }
 
 .prod_columns {
@@ -38,11 +72,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  
+
+    
+    @include bp($point_2) {
+        gap: 2rem;
+    }
+    
+
+    @include bp($point_3) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }
 
 .prod_columns__left {
-    width: calc(50% - 1.5rem);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -50,7 +94,7 @@
 }
 
 .prod_columns__right {
-    width: calc(50% - 2.9rem);
+    width: 100%;
     display: flex;
     flex-direction: row;       
     align-items: center;
@@ -59,20 +103,46 @@
     row-gap: 2.9rem;
 }
 
+.prod_box {
+    width: calc(50% - 1.45rem);
+}
+
 .prod_picture_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
     @extend %contain_img;
 }
 
 .prod_picture {
+    position: relative;
     margin-bottom: 1.4rem;
-    width: 26.3rem;
-    height: 18.8rem;
+    width: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        padding-top: 71.5%;
+    }
+
 }
 
+.prod_big_title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+}
 
 .prod_picture.prod_picture__big {
-    width: 55.5rem;
-    height: 44.8rem;
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: '';
+        display: block;
+        padding-top: 80%;
+    }
 }
 
 .prod_big_title {
@@ -82,27 +152,81 @@
     text-align: left;
     color: #1E1F4B;
     padding-bottom: 1.2rem;
+    
+    
+    @include bp($point_4) {
+        font-size: 2rem;
+    }
+    
+    @include bp($point_6) {
+        font-size: 1.8rem;
+    }
+    
+    
+    @include bp($point_7) {
+        font-size: 1.6rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    
 }
 
 .prod_picture__date,
 .prod_descr {
-    font-family: Poppins;
     font-size: 1.4rem;
     font-weight: 400;
     line-height: 2.6rem;
     text-align: left;
     color: $color_text_3;
     padding-bottom: 0.9rem;
+
+    
+    @include bp($point_4) {
+        font-size: 1.2rem;
+    }
+
+    
+    @include bp($point_6) {
+        font-size: 1.1rem;
+        line-height: 2.3rem;
+    }
+    
+    
+    @include bp($point_7) {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    
 }
 
 .prod_title {
-    width: 26.3rem;
-    height: 5.6rem;
     font-size: 1.8rem;
     font-weight: 700;
     line-height: 2.8rem;
     text-align: left;
     color: #2E3E5C;
+
+    
+    @include bp($point_4) {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+    }
+    
+    
+    @include bp($point_6) {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+    }
+    
+    
+    @include bp($point_7) {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    
+    }
+    
 }
 
 

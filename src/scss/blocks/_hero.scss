@@ -4,75 +4,184 @@
 	display: flex;
 	flex-direction: row;
 	row-gap: 10px;
-	align-items: center;
+	align-items: flex-start;
+	padding-top: 14rem;
+	
+	
+	@include bp($point_2) {
+		padding-top: 1rem;
+	}
 	
 
-  }
-  .hero__info_wrap {
-	width: 57%;
-	display: flex;
-	flex-direction: column;	
+	@include bp($point_3) {
+		flex-direction: column-reverse;
+		row-gap: 2rem;
+		align-items: center;
+	}
+}
 
-  }
+.hero__info_wrap {
+	flex-direction: column;	
+	
+	@include bp($point_2, min) {
+		display: block;
+		max-width: 57%;
+		flex-shrink: 0;
+	}
+	
+	@include bp($point_3) {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
   
-  .hero__title{
-	width: 716px;
-height: 220px;
-font-size: 60px;
-font-weight: 700;
-line-height: 110px;
-letter-spacing: 0.20000000298023224px;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-text-wrap: wrap;
-margin-bottom: 42px;
-  }
+.hero__title{
+	position: relative;
+	margin-bottom: 4.2rem;
+	font-weight: 700;
+	line-height: 1.83;
+	
+	text-align: left;
+	
+	@include bp($point_2, min) {
+		font-size: 6rem;
+	}
+	
+
+	@include bp($point_2) {
+		font-size: 3.5rem;
+	}
+
+	
+	@include bp($point_4) {
+		font-size: 3rem;
+		margin-bottom: 2.5rem;
+	}
+
+	
+	@include bp($point_6) {
+		font-size: 2.7rem;
+		margin-bottom: 2rem;
+	}
+	
+	
+	@include bp($point_7) {
+		font-size: 2.5rem;
+		margin-bottom: 1.5rem;
+		line-height: 1.75;
+	
+	}
+	
+	
+}
 
 .products_logo{
-	position: relative;
-    top: -12.2rem;
+	position: absolute;
+    top: 9rem;
     left: 21rem;
+
+	
+	@include bp($point_1) {
+		width: 60%;
+	}
+	
+
+	@include bp($point_2) {
+		top: 5.5rem;
+		left: 13.4rem;
+    	width: 58%;
+	}	
+
+	
+	@include bp($point_4) {
+		top: 5rem;
+        left: 11rem;
+	}
+	
+	
+	@include bp($point_6) {
+		top: 4.4rem;
+        left: 9.8rem;
+	}
+	
+	
+	@include bp($point_7) {
+		top: 3.8rem;
+        left: 8.9rem;
+	}
+	
 }
-  .hero__descr{
-	width: 555px;
-	height: 108px;
-	opacity: 0.8px;
-	font-family: Poppins;
-	font-size: 20px;
+
+.hero__descr{
+	font-size: 2rem;
 	font-weight: 400;
 	line-height: 36px;
 	text-align: left;
-	text-underline-position: from-font;
-	text-decoration-skip-ink: none;
+	color: $color_text_3;
+	max-width: 55.5rem;
+	width: 100%;
 
-  }
-  .hero__footer{
+	
+	@include bp($point_2) {
+		font-size: 1.8rem;
+		text-align: center;
+	}
+	
+	@include bp($point_4) {
+		font-size: 1.6rem;
+	}
+
+	
+	@include bp(507.98px) {
+		padding-bottom: 1.3rem;
+	}
+	
+	
+	@include bp($point_6) {
+		font-size: 1.4rem;	
+		line-height: 30px;
+	}
+
+	
+	@include bp($point_7) {
+		font-size: 1.2rem;
+		line-height: 26px;
+	}
+	
+	
+}
+
+.hero__footer{
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
 	align-items: center;
-	column-gap: 35px;
-
-  }
-  .btn_base.btn--purple{
+	column-gap: 3.5rem;
+	
+	@include bp($point_3) {
+		flex-wrap: wrap;
+		justify-content: center;
+		row-gap: 3rem;
+	}
+}
+  
+.btn_base.btn--purple{
 	width: 181px;
 	height: 47px;
 	padding: 10px 40px 10px 40px;
 	gap: 10px;
 	border-radius: 12px;
 	background: #706FE5;
-	font-family: Poppins;
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 27px;
 	text-align: center;
-	text-underline-position: from-font;
-	text-decoration-skip-ink: none;
 	color: #FFFFFF;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out
-  }
+}
 
 .btn_base.btn--purple:hover {
 	background-color: rgba(255, 255, 255, 1);
@@ -87,16 +196,15 @@ margin-bottom: 42px;
 	font-weight: 400;
 	line-height: 24px;
 	text-align: left;
-	text-underline-position: from-font;
-	text-decoration-skip-ink: none;
 	color: #2E3E5C;
-	
 }
+
 .round_btn{
 	width: 48px;
 	height: 48px;
 
 }
+
 .btn_base.btn--white{
 	display: flex;
 	flex-direction: row;
@@ -110,19 +218,47 @@ margin-bottom: 42px;
 .btn_base.btn--white:active,
 .btn_base.btn--white:focus,
 .btn_base.btn--white:hover {
-
 	border: 1px solid #706FE5;
 	border-radius: 40px;
+	margin-top: 0.15rem;
 }
 
+.hero__picture_wrap {
+	position: relative;
+	width: 51.7rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	
+	@include bp($point_5) {
+	overflow: hidden;
+	max-width: 100%;
+	}
+	
+}
 
 .hero__picture {
 	position: relative;
 	z-index: 1;
-	min-width: 51.7rem;
-	max-width: 51.7rem;
-	width: 51.7rem;
+	min-width: 50rem;
+	max-width: 50rem;
+	width: 50rem;
 	left: 50px;
+	bottom: 100px;
+
+	@include bp($point_2) {
+		left: 0;
+		bottom: 0;
+	}
+
+	
+	@include bp($point_6) {
+		min-width: unset;
+		max-width: unset;
+		width: 100%;
+	}
+	
 
 	&::before {
 		content: "";
@@ -132,61 +268,104 @@ margin-bottom: 42px;
 		left: 50%;
 		
 		z-index: -1;
-		width: 39.7rem;
-		height: 39.7rem;
-		border-radius: 50%;
-		border: 1rem solid $color_accent;
+		width: 40rem;
+		height: 40rem;
+		border: 1rem solid rgba(112, 111, 229, 1);
 		background: rgba(112, 111, 229, 0.15);
 		transform: translateX(-50%);
+
+		
+		@include bp($point_4, min) {
+			border-radius: 50%;
+
+		}
+		
+		@include bp($point_5) {
+			max-width: 100%;
+		}
+
+		
+		@include bp($point_6) {
+			transform: none;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
 	}
 	&__reviews {
 		position: absolute;
-	}
-
-	&__circle {
-		position: absolute;
+		
+		@include bp($point_3) {
+			display: none;
+		}	
 	}
 }
 
-.hero__picture__reviews_img {
-    position: absolute;
-    width: 27rem;
-    height: 16rem;
-	bottom: 3.5rem;
-	left: 13rem;
+.hero__picture_img {
+	width: 100%;
+	height: auto;
+}
 
-    overflow: hidden;
+.hero__picture__reviews_img {
+    
+	@include bp($point_2, min) {
+		position: absolute;
+    	width: 27rem;
+    	height: 16rem;
+		bottom: 3.5rem;
+		left: 13rem;
+
+    	overflow: hidden;
+	}
+	
     @extend %contain_img;
 
 }
 
-.hero__picture__circle--almaz {
-	top: -3.5rem;
-    left: -5.5rem;
-	width: 4.8rem;
-    height: 4.8rem;
+.hero__picture__circle {
+	
+	@include bp($point_2, min) {
+		position: absolute;
+
+		&--almaz {
+		top: -3.5rem;
+		left: -5.5rem;
+		width: 4.8rem;
+		height: 4.8rem;
+	}
+	
+		&--xd {
+		top: 2.6rem;
+		left: 2.6rem;
+		width: 7rem;
+		height: 7rem;
+	}
+	
+		&--figma {
+		top: 5rem;
+		right: 1.5rem;
+		width: 8.4rem;
+		height: 8.4rem;
+	}
+	}
+	
+	@include bp($point_3) {
+		display: none;
+	}
+	
 }
 
-.hero__picture__circle--xd {
-    top: 2.6rem;
-    left: 2.6rem;
-    width: 7rem;
-    height: 7rem;
-}
-
-.hero__picture__circle--figma {
-    top: 5rem;
-    right: 1.5rem;
-	width: 8.4rem;
-    height: 8.4rem;
-}
 
 .hero__picture__reviews_circle {
 	position: relative;
 	display: flex;
     width: 8.4rem;
     height: 8.4rem;
-    background-color: $color_accent;
+    background-color:rgba(112, 111, 229, 1);
     border-radius: 50%;
 	bottom: 2.2rem;
     left: 33.3rem;
